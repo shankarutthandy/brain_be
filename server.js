@@ -6,10 +6,8 @@ const bcrypt=require('bcrypt-nodejs');
 const knex=require('knex')({
     client: 'pg',
     connection: {
-      host : 'localhost',
-      user : 'shankar',
-      password : '',
-      database : 'smart-brain'
+        connectionString: process.env.DATABASE_URL,
+        ssl:true
     }
   }) 
 app.use(bodyParser.json());
